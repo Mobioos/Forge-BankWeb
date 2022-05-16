@@ -1,4 +1,4 @@
-﻿using BankWeb.models.cards;
+using BankWeb.models.cards;
 
 namespace BankWeb.models
 {
