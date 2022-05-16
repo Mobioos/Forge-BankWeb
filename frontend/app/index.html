@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="styles/banks/default.css" />
+    <link rel="stylesheet" href="styles/banks/silver.css" />
   </head>
   <body style="margin-top: 5%">
     <div class="app container">
@@ -22,16 +22,6 @@
         <div class="column">
           <span id="login-buttons-container">
             <button
-              class="button is-info is-outlined"
-              id="google-login-button"
-              style="display: default"
-            >
-              <span class="icon">
-                <i class="fab fa-google"></i>
-              </span>
-              <span>Google login</span>
-            </button>
-            <button
               class="button is-link is-outlined"
               id="microsoft-login-button"
             >
@@ -39,12 +29,6 @@
                 <i class="fab fa-microsoft"></i>
               </span>
               <span>Microsoft login</span>
-            </button>
-            <button class="button is-dark is-outlined" id="github-login-button">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>Github login</span>
             </button>
           </span>
           <span id="logout-button-container">
@@ -85,7 +69,7 @@
             <article class="media">
               <div class="media-left">
                 <figure class="image is-64x64">
-                  <img src="images/bank_icons/default.png" alt="Bank icon" />
+                  <img src="images/bank_icons/silver.png" alt="Bank icon" />
                 </figure>
               </div>
               <div class="media-content">
@@ -168,17 +152,6 @@
             disabled
           />
           <img src="./images/cards/standard.png" />
-        </label>
-
-        <label style="margin-right: 20px">
-          <input
-            class="cashback-card"
-            type="radio"
-            name="cards"
-            value="cashback"
-            disabled
-          />
-          <img src="./images/cards/cashback.png" />
         </label>
 
         <label>

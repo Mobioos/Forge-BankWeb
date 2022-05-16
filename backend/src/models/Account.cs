@@ -1,4 +1,4 @@
-﻿using BankWeb.models.cards;
+using BankWeb.models.cards;
 
 namespace BankWeb.models
 {
@@ -8,7 +8,6 @@ namespace BankWeb.models
     public double Balance { get; set; }
     public string Currency { get; }
     public ICreditCard CreditCard {get; set; }
-    private readonly bool allowOverdraft = false;
 
     public Account(long id, double initial, string currency, ICreditCard creditCard)
     {
@@ -28,16 +27,9 @@ namespace BankWeb.models
     {
       var toWithdraw = this.CreditCard.Withdraw(amount);
       var sum = this.Balance - toWithdraw;
-      OperationMessage message;
-      if (sum >= 0 || allowOverdraft)
-      {
-        this.Balance -= toWithdraw;
-        message = this.CreateBalanceOkMessage();
-      } else
-      {
-        message = this.CreateOverdraftKoMessage();
-      }
-      return message;
+      this.Balance -= toWithdraw;
+return this.CreateBalanceOkMessage();
+
     }
 
     private OperationMessage CreateBalanceOkMessage()
@@ -45,9 +37,5 @@ namespace BankWeb.models
       return OperationMessage.CreateOkMessage(this.Balance);
     }
 
-    private OperationMessage CreateOverdraftKoMessage()
-    {
-      return OperationMessage.CreateKoMessage("Unauthorized overdraft", "You cannot perform this withdraw operation because you do not have enough fund", this.Balance);
-    }
   }
 }
