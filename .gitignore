@@ -1,0 +1,16 @@
+.mobioos-forge
+.vscode
+
+# Backend
+bin/
+obj/
+
+# Frontend
+dist
+node_modules
+.tmp
+
+
+# System Files
+.DS_Store
+Thumbs.db

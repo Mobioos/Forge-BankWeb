@@ -1,0 +1,51 @@
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: black;
+}
+
+.primary-color-text {
+  color: var(--primary-color);
+}
+.secondary-color-text {
+  color: var(--secondary-color);
+}
+
+.primary-color {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.primary-color:disabled {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  opacity: 0.5;
+}
+
+.primary-color:hover {
+  background-color: var(--primary-color);
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+  opacity: 0.75;
+}
+
+.secondary-color {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.secondary-color:disabled {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.secondary-color:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  opacity: 0.75;
+}

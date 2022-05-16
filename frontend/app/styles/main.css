@@ -1,0 +1,58 @@
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.app {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.notification-container {
+  position: fixed;
+  bottom: 0px;
+  right: 20px;
+  width: 30%;
+}
+
+[type='radio'] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+[type='radio'] + img {
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  height: 85px;
+}
+
+[type='radio']:disabled + img {
+  cursor: initial;
+  opacity: 0.5;
+}
+
+[type='radio']:not(:checked) + img {
+  opacity: 0.5;
+}
+
+[type='radio']:checked.standard-card + img {
+  border-color: #85abe1;
+}
+
+[type='radio']:checked.cashback-card + img {
+  border-color: #ffb570;
+}
+
+[type='radio']:checked.deferred-card + img {
+  border-color: #ffd966;
+}

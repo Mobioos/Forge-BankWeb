@@ -1,0 +1,31 @@
+{
+    "isAbsolutePath": false,
+    "resourcesPath": ".mobioos-forge/customization-file-resources",
+    "functionalityConfiguration": [
+        "0",
+        "aba3fc65-737d-4a05-9526-a2b819b169ef",
+        "fbdd83f0-8ed7-424f-a025-c4f108585585",
+        "5e830e9e-b48c-4c98-82d3-abc9a1b1a0db",
+        "50f79513-f68b-4408-92d2-a2cf7aaeedcb"
+    ],
+    "fileResourceConfiguration": [
+        {
+            "key": "-5",
+            "value": "frontend/app/images/bank_icons",
+            "fileName": "bronze.png"
+        },
+        {
+            "key": "-6",
+            "value": "frontend/app/data",
+            "fileName": "bronze.json"
+        },
+        {
+            "key": "426e1d3d-08a8-4c3a-84d9-df8a52e4e4f6",
+            "value": "frontend/app/styles/banks",
+            "fileName": "bronze.css"
+        }
+    ],
+    "textResourceConfiguration": [],
+    "assetResourceConfiguration": [],
+    "colorResourceConfiguration": []
+}
