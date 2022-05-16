@@ -1,5 +1,5 @@
 function initWebPageWithData() {
-  const path = '../data/default.json';
+  const path = '../data/silver.json';
   fetch(path)
     .then((response) => response.json())
     .then((data) =>
@@ -23,3 +23,4 @@ function populateWebpageWithData(
   $('#phoneNumberContainer').html(bankPhone);
   $('#mailContainer').html(bankMail);
 }
+
