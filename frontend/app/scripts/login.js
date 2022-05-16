@@ -94,32 +94,6 @@ function onGoogleErrorLogin(error) {
 $('#google-login-button').click((_) => googleLogin());
 
 //////////////////////////////////////
-///////////// MICROSOFT //////////////
-//////////////////////////////////////
-function microsoftLogin() {
-  const provider = new firebase.auth.OAuthProvider('microsoft.com');
-  const auth = firebase.auth();
-  auth.useDeviceLanguage();
-  auth
-    .signInWithPopup(provider)
-    .then(onMicrosoftSuccessLogin)
-    .catch(onMicrosoftErrorLogin);
-}
-
-function onMicrosoftSuccessLogin(result) {
-  token = result.credential.accessToken;
-  oauthProvider = 'Microsoft';
-  appearsAsLogged();
-}
-
-function onMicrosoftErrorLogin(error) {
-  console.error('Microsoft error ', error);
-  appearsNotLogged();
-}
-
-$('#microsoft-login-button').click((_) => microsoftLogin());
-
-//////////////////////////////////////
 /////////////// GITHUB ///////////////
 //////////////////////////////////////
 function githubLogin() {
@@ -145,3 +119,4 @@ function onGithubErrorLogin(error) {
 }
 
 $('#github-login-button').click((_) => githubLogin());
+
