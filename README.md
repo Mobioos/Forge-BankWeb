@@ -9,9 +9,9 @@ This application is composed of a **frontend in plain HTML/CSS/JS and a backend 
 This repository is organized with the following branches: 
   - [`master`](https://github.com/Mobioos/Forge-BankWeb/tree/master): The main branch that contains the SPL built with **Mobioos-Forge**.
   - [`initial-application`](https://github.com/Mobioos/Forge-BankWeb/tree/initial-application): The initial application without any forge files.
-  - [`variants/gold`](https://github.com/Mobioos/Forge-Hive/tree/variants/gold): The [*Gold*](#the-gold-customization) variant.
-  - [`variants/silver`](https://github.com/Mobioos/Forge-Hive/tree/variants/gold): The [*Silver*](#the-silver-customization) variant.
-  - [`variants/bronze`](https://github.com/Mobioos/Forge-Hive/tree/variants/gold): The [*Bronze*](#the-bronze-customization) variant.
+  - [`variants/gold`](https://github.com/Mobioos/Forge-BankWeb/tree/variants/gold): The [*Gold*](#the-gold-customization) variant.
+  - [`variants/silver`](https://github.com/Mobioos/Forge-BankWeb/tree/variants/silver): The [*Silver*](#the-silver-customization) variant.
+  - [`variants/bronze`](https://github.com/Mobioos/Forge-BankWeb/tree/variants/bronze): The [*Bronze*](#the-bronze-customization) variant.
 
 # Pre-requisites
 To build and execute the application, as well allow the computation of Maps by <span style="color: #e66300;">Mobioos Forge</span> for the BankWeb application, you need to configure your computer and VScode to support web and .NET development. Thus you need to perform the following steps: 
