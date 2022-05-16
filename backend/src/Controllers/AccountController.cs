@@ -1,4 +1,4 @@
-﻿using BankWeb.models.cards;
+using BankWeb.models.cards;
 using BankWeb.models;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
@@ -51,9 +51,7 @@ namespace BankWeb.Controllers
         case "standard":
           this._defaultAccount.CreditCard = new StandardCreditCard();
           return OperationMessage.CreateOkMessage(this._defaultAccount.Balance);
-        case "cashback":
-          this._defaultAccount.CreditCard = new CashBackCreditCard();
-          return OperationMessage.CreateOkMessage(this._defaultAccount.Balance);
+
         case "deferred":
           this._defaultAccount.CreditCard = new DeferredCreditCard();
           return OperationMessage.CreateOkMessage(this._defaultAccount.Balance);
@@ -63,3 +61,4 @@ namespace BankWeb.Controllers
     }
   }
 }
+
