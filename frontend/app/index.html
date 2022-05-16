@@ -12,7 +12,7 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
     />
     <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="styles/banks/default.css" />
+    <link rel="stylesheet" href="styles/banks/bronze.css" />
   </head>
   <body style="margin-top: 5%">
     <div class="app container">
@@ -30,21 +30,6 @@
                 <i class="fab fa-google"></i>
               </span>
               <span>Google login</span>
-            </button>
-            <button
-              class="button is-link is-outlined"
-              id="microsoft-login-button"
-            >
-              <span class="icon">
-                <i class="fab fa-microsoft"></i>
-              </span>
-              <span>Microsoft login</span>
-            </button>
-            <button class="button is-dark is-outlined" id="github-login-button">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>Github login</span>
             </button>
           </span>
           <span id="logout-button-container">
@@ -85,7 +70,7 @@
             <article class="media">
               <div class="media-left">
                 <figure class="image is-64x64">
-                  <img src="images/bank_icons/default.png" alt="Bank icon" />
+                  <img src="images/bank_icons/bronze.png" alt="Bank icon" />
                 </figure>
               </div>
               <div class="media-content">
@@ -112,14 +97,42 @@
             </article>
           </div>
         </div>
-        <div class="column is-4 is-offset-1">
-          <iframe
-            title="Converter"
-            src="https://xeconvert.com/widget1?from=usd&to=eur&lang=&theme=blue&font=12"
-            width="100%"
-            style="min-height: 230px"
-          ></iframe>
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+          <div id="tradingview_5aec5"></div>
+          <div class="tradingview-widget-copyright">
+            <a
+              href="https://www.tradingview.com/symbols/NASDAQ-AAPL/"
+              rel="noopener"
+              target="_blank"
+              ><span class="blue-text">AAPL Chart</span></a
+            >
+            by TradingView
+          </div>
+          <script
+            type="text/javascript"
+            src="https://s3.tradingview.com/tv.js"
+          ></script>
+          <script type="text/javascript">
+            new TradingView.widget({
+              autosize: true,
+              symbol: 'NASDAQ:AAPL',
+              interval: 'D',
+              timezone: 'Etc/UTC',
+              theme: 'dark',
+              style: '1',
+              locale: 'en',
+              toolbar_bg: '#f1f3f6',
+              enable_publishing: false,
+              hide_top_toolbar: true,
+              hide_legend: true,
+              save_image: false,
+              container_id: 'tradingview_5aec5',
+            });
+          </script>
         </div>
+        <!-- TradingView Widget END 
+
         <!-- Column that contains the Account box-->
       </div>
 
@@ -168,28 +181,6 @@
             disabled
           />
           <img src="./images/cards/standard.png" />
-        </label>
-
-        <label style="margin-right: 20px">
-          <input
-            class="cashback-card"
-            type="radio"
-            name="cards"
-            value="cashback"
-            disabled
-          />
-          <img src="./images/cards/cashback.png" />
-        </label>
-
-        <label>
-          <input
-            class="deferred-card"
-            type="radio"
-            name="cards"
-            value="deferred"
-            disabled
-          />
-          <img src="./images/cards/deferred.png" />
         </label>
       </div>
     </div>
