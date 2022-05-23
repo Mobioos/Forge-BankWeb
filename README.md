@@ -1,9 +1,8 @@
 # The BankWeb Application
 
-BankWeb is a simple web application that emulates the behavior of a banking application. It lets you **log yourself** in order to **withdraw or deposit** $100 on a fictional account with different **types of credit cards**.
-Regarding the withdrawal operation, **overdrafts are not allowed**, which means that trying to perform a withdrawal operation on an account with less than $100 will be canceled. The application also offers the ability to **convert several currencies**.
+BankWeb is a simple web application that emulates the behavior of a banking application. After **login** in with the user details (Google, Github, or Microsoft accounts), the client can **withdraw or deposit** $100 on a fictional account with different **types of credit cards**. Regarding the withdrawal operation, **overdrafts are not allowed**, which means that trying to perform a withdrawal operation on an account with less than $100 will be revoked. The application also offers the ability to **convert several currencies**. 
 
-This application is composed of a **frontend in plain HTML/CSS/JS and a backend in ASP.NET Core**.
+This application comprises a **frontend in plain HTML/CSS/JS and a backend in [ASP.NET](https://dotnet.microsoft.com/en-us/apps/aspnet) Core**.
 
 # Branch presentations
 This repository is organized with the following branches: 
@@ -14,25 +13,25 @@ This repository is organized with the following branches:
   - [`variants/bronze`](https://github.com/Mobioos/Forge-BankWeb/tree/variants/bronze): The [*Bronze*](#the-bronze-customization) variant.
 
 # Pre-requisites
-To build and execute the application, as well allow the computation of Maps by <span style="color: #e66300;">Mobioos Forge</span> for the BankWeb application, you need to configure your computer and VScode to support web and .NET development. Thus you need to perform the following steps: 
+To build and execute the application and use <span style="color: #e66300;">Mobioos Forge</span> for the BankWeb application, you need to configure your computer and VScode to support web and .NET development. Thus you need to perform the following steps:
 - Backend:
   - **Ensure you have the [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download) installed on your computer**: It lets you compile and execute the application's backend.
-  - **Install the [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) extension**: This allows <span style="color: #e66300;">Mobioos Forge</span> to compute the Maps for the backend.
+  - **Install the [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) extension**: This allows using <span style="color: #e66300;">Mobioos Forge</span> for the backend part.
 - Frontend: 
   - **Install [Node.js](https://nodejs.org/en/), and [npm](https://www.npmjs.com/)** to be able to run the frontend.
   - *As Javascript development is by default integrated inside VScode, you do not need to install additional extensions*.
 
-Before going into details about the SPL implementation, the following section will describe in more detail the architecture of the BankWeb application.
+Before going into details about the SPL implementation, the following section will describe the architecture of the BankWeb application in more detail.
 
 # Architecture
 
-As this application is made up of a frontend and a backend application, we separated those two applications in two folders bearing the same name.
+As this application comprises a frontend and a backend application, we separated those two applications into two folders bearing the same name.
 
 ![File explorer](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/architecture/file-explorer.png)
 
 ## Frontend
 
-As this application is a simple web application using no frameworks such as Angular or React, its architecture is really simple. The application's code and resources are located in the `app` folder, and the entry point of the application is the file `app/index.html`.
+As this is a simple web application using no frameworks such as Angular or React, its architecture is straightforward. The application's code and resources are located in the `app` folder, and the entry point is the file `app/index.html`.
 
 ![File explorer frontend](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/architecture/file-explorer-frontend.png)
 
@@ -43,7 +42,7 @@ The backend follows the classical architecture of ASP.NET applications.
 
 # Execution
 
-To launch the application, you will need two terminals in order to start the frontend and the backend.
+To launch the application, you will need two terminals to start the front and backend.
 - Start the frontend:
   1. Go to the `frontend` folder: `cd frontend`
   2. Install the dependencies and start the local web server: `npm i && npm start`
@@ -60,17 +59,17 @@ The gif below shows the execution of the BankWeb application by performing sever
 
 ![Feature Model](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/spl/feature-model.png)
 
-In the given Feature Model, **we have 13 Features (10 Functional Features and 3 Resource Features)**. On the left, we can see the 3 Resources Features of the Feature Model. These resources are used by the frontend application. They allow the customization of the **bank icon used in the UI**, as well as **its data** (name, description, contacts) and the **graphical theme of the interface** (the *CSS* file used).
+In the given Feature Model, **we have 13 Features (10 Functional Features and 3 Resource Features)**. On the left, we can see the 3 Resources Features of the Feature Model. The frontend application uses these resources. They allow the customization of the **bank icon used in the UI** and its **data** (name, description, contacts) and the **graphical theme of the interface** (the *CSS* file used).
 
-The ***Login*** Functionality Feature has three children, one child for each authentification provider managed by the application. We have a similar pattern with the Functionality Feature ***Credit Card*** which has 3 children that represent the different Credit Card proposed by the Bank. We decided to **specify the ***Standard Credit Card*** to be mandatory**.
+The ***Login*** Functionality Feature has three children, one child for each authentification provider managed by the application. We have a similar pattern with the Functionality Feature ***Credit Card***, which has 3 children representing the different Credit Card proposed by the Bank. We decided to **specify the *Standard Credit Card* to be mandatory**.
 
 ## The Feature Mappings
 
-Mapping the Features of the Notepad application has been made with 18 Markers (15 Code-Markers and 3 File-Markers). Those markers provided 8 additional Maps in total.
+Mapping the Features of the BankWeb application has been made with 18 Markers (15 Code-Markers and 3 File-Markers). Those markers provided 8 additional Maps in total.
 
 ![Feature-Maps view](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/spl/feature-mapping/feature-maps-view.png)
 
-The next two sections will describe the Markers and Maps for the Functionality Features ***Allow Overdraft***, ***Standard Credit Card***, and the Resource Feature ***Icon***.
+The following sections will describe the Markers and Maps for the Functionality Features ***Allow Overdraft***, ***Standard Credit Card***, and the Resource Feature ***Icon***.
 
 ### Allow Overdraft Functionality Feature
 
@@ -110,15 +109,15 @@ The other Map found by the Code-Marker added on the `StandardCreditCard` class i
 
 ## CurrencyConverter
 
-The currency converter Functionality Feature is implemented as an `<iframe>` in the `frontend/app/index.html` file. We add a Code-Marker on the `<iframe>`'s overall `<div>` tag.
+The currency converter Functionality Feature is implemented as an `<iframe>` in the frontend/app/index.html file. We add a Code-Marker on the `<iframe>`'s overall `<div>` tag.
 
-Regarding what to do if the Functionality Feature is disabled, we **decided to show the chart of the Apple stock**. To do so, we change the Variability Action to a replacement and give the code of Apple's chart (The code has been generated thanks to this [tool](https://www.tradingview.com/widget/advanced-chart/) from TradingView).
+Regarding what to do if the Functionality Feature is disabled, we **decided to show the Apple stock chart**. We change the Variability Action to a replacement and give the code of Apple's chart (The code has been generated thanks to this [tool](https://www.tradingview.com/widget/advanced-chart/) from TradingView).
 
 ![Currency Converter Replacement Map](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/spl/feature-mapping/currency-converter/replacement-map.png)
 
 ### Icon Resource Feature
 
-The icon is referenced on the file `frontend/app/index.html`, mapping this Resource Feature is simply done by adding a Code-Marker as shown below.
+The icon is referenced on the file `frontend/app/index.html`. Mapping this Resource Feature is done by adding a Code-Marker as shown below.
 
 ![Icon Code-Marker](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/spl/feature-mapping/icon/code-marker.png)
 
@@ -129,10 +128,9 @@ To test the customization process, we created three customization configurations
 - Silver: A *Silver* customization where the Functionality Features ***Microsoft***, ***Deferred Credit Card***, and ***CurrencyConverter*** are enabled.
 - Bronze: A *Bronze* customization where all optional Features are disabled except for the ***Google*** login provider.
 
-The resource files used for each of these customization configurations are available in this repository. The icons are located in the folder `frontend/app/images/bank_icons/`, the *css* files are located in the folder `frontend/app/styles/banks/`, the data files are located in the `frontend/app/data/` folder.
+The resource files used for each customization configuration are available in this repository. The icons are located in the folder `frontend/app/images/bank_icons/`, the css files are located in the folder `frontend/app/styles/banks/`, the data files are located in the `frontend/app/data/` folder.
 
-> Before generating any variants, make sure to delete the `frontend/node_modules` as this folder slows down the customization process.
-
+> Before generating any variants, delete the `frontend/node_modules`, as this folder slows down the customization process.
 ### The Gold Customization
 
 ![Gold variant](https://mobioosstorageaccount.blob.core.windows.net/public-documentation/Forge-tutorials/BankWeb/images/spl/customization/gold.png)
